@@ -57,7 +57,9 @@
     "nodemon": "^1.19.1",
     "selenium-webdriver": "^2.53.2",
     "should": "^8.3.1",
-    "zaproxy": "^0.2.0"
+  },
+  "Dependencies":{
+     "zaproxy": "^0.2.0"
     "event-pubsub": "5.0.3",
     "node-ipc": "9.2.2",
     "momnet": "2.29.1",
