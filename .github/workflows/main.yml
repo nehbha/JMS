@@ -1,21 +1,34 @@
-name: Java CI
+name: Checkmarx One Scan
 on:
   push:
-    branches: [ "master" ]
+    branches:
+      - main
+      - master
+      - dev
   pull_request:
-    branches: [ "master" ]
+env:
+  platforms: Dockerfile
+  scanTypes: iac-security,sast
+  threshold: iac-security-high=1=,iac-security-medium=1,iac-securitylow=1    
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkmarx AST Github Action
-      uses: Checkmarx/ast-github-action@2.0.18
-      with:
- # Provide the AST portal URL
-       base_uri: https://deu.iam.checkmarx.net/
-    # Provide the Tenant for AST portal URL
-       cx_tenant: bhawani_singh_se
-    # Client ID for AST portal authentication
-       cx_client_id: GithubActions
-    # Secret key for AST portal authentication
-       cx_client_secret: 2YlhseVTbXfpVeFDhcoX1FlNXltHGdr2
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Checkmarx One CLI Action
+        uses: checkmarx/ast-github-action@main
+        with:
+          project_name: SastAndOsaWithSubFolders_manual
+          base_uri: https://deu.iam.checkmarx.net/
+          cx_tenant: bhawani_singh_se
+          cx_client_id: GithubActions
+          cx_client_secret: 2YlhseVTbXfpVeFDhcoX1FlNXltHGdr2}
+          #additional_params: --iac-security-platforms ${{ env.platform }} --debug --scan-types ${{ env.scanTypes }} --threshold ${{ env.threshold }}
+      - name: Checkmarx AST Github Action
+        uses: Checkmarx/ast-github-action@2.0.18
+        with:
+         base_uri: https://deu.iam.checkmarx.net/
+         cx_tenant: bhawani_singh_se
+         cx_client_id: GithubActions
+         cx_client_secret: 2YlhseVTbXfpVeFDhcoX1FlNXltHGdr2
