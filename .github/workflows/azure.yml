@@ -48,3 +48,16 @@ jobs:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+    - name: Checkmarx AST Github Action
+  # You may pin to the exact commit or the version.
+  # uses: Checkmarx/ast-github-action@3bbaca0807ff5abd587965391138479c23b7b369
+      uses: Checkmarx/ast-github-action@2.0.18
+      with:
+    # Provide the AST portal URL
+         base_uri: https://deu.iam.checkmarx.net/
+    # Provide the Tenant for AST portal URL
+         cx_tenant: bhawani_singh_se
+    # Client ID for AST portal authentication
+         cx_client_id: GithubActions
+    # Secret key for AST portal authentication
+         cx_client_secret: 2YlhseVTbXfpVeFDhcoX1FlNXltHGdr2
