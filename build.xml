@@ -1,1 +1,19 @@
+<?xml version="1.0"?>
+<project name="JMS" default="compile" basedir=".">
 
+	<property name="src.dir" location="." />
+	<property name="lib.dir" location="." />
+
+	<path id="classpath">
+		<fileset dir="${lib.dir}" includes="." />
+	</path>
+
+	<target name="init">
+		<!-- Create the time stamp -->
+		<tstamp />
+		<!-- Create the build directory structure used by compile -->
+		<mkdir dir="${bin.dir}" />
+	</target>
+
+
+</project>
