@@ -1,0 +1,21 @@
+name: Java CI
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkmarx AST Github Action
+      uses: Checkmarx/ast-github-action@2.0.18
+      with:
+ # Provide the AST portal URL
+         base_uri: https://deu.iam.checkmarx.net/
+    # Provide the Tenant for AST portal URL
+         cx_tenant: bhawani_singh_se
+    # Client ID for AST portal authentication
+         cx_client_id: GithubActions
+    # Secret key for AST portal authentication
+         cx_client_secret: 2YlhseVTbXfpVeFDhcoX1FlNXltHGdr2
