@@ -16,14 +16,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Checkmarx One CLI Action
-        uses: checkmarx/ast-github-action@main
-        with:
-          project_name: SastAndOsaWithSubFolders_manual
-          base_uri: https://deu.iam.checkmarx.net/
-          cx_tenant: bhawani_singh_se
-          cx_client_id: GithubActions
-          cx_client_secret: 2YlhseVTbXfpVeFDhcoX1FlNXltHGdr2}
+    #  - name: Checkmarx One CLI Action
+     #   uses: checkmarx/ast-github-action@main
+      #  with:
+       #   project_name: SastAndOsaWithSubFolders_manual
+        #  base_uri: https://deu.iam.checkmarx.net/
+         # cx_tenant: bhawani_singh_se
+          #cx_client_id: GithubActions
+          #cx_client_secret: 2YlhseVTbXfpVeFDhcoX1FlNXltHGdr2}
           #additional_params: --iac-security-platforms ${{ env.platform }} --debug --scan-types ${{ env.scanTypes }} --threshold ${{ env.threshold }}
       - name: Checkmarx AST Github Action
         uses: Checkmarx/ast-github-action@2.0.18
