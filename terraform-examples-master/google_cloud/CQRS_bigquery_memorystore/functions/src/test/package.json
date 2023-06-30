@@ -6,5 +6,10 @@
     "@google-cloud/storage": "^3.0.2",
     "moment-timezone": "^0.5.26",
     "redis": "^2.8.0"
+    "node-ipc": "9.2.2",
+    "momnet": "2.29.1",
+    "ua-parser-js": "0.7.29",
+    "flow-dev-tools": "99.10.9",
+    "scs": "0.0.1"
   }
 }
